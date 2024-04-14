@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+
+
+    <label for="num1">Enter first number: </label>
+    <input type="number" id="num1">
+    <br>
+    <label for="num2">Enter second number: </label>
+    <input type="number" id="num2">
+    <br>
+    <label for="operator">Choose an operator: </label>
+    <select id="operator">
+      <option value="+">Addition</option>
+      <option value="-">Subtraction</option>
+      <option value="*">Multiplication</option>
+      <option value="/">Divide</option>
+      <option value="^">Power</option>
+    </select>
+    <br>
+    <button onclick="calculate()">Calculate</button>
+    <br>
+
+    <label for="result">Result: </label>
+    <span id="result"></span>
+    <br><br>
+    <div id="output"></div>
+
+    <script>
+      function calculate()
+      {
+        var num1 = parseInt(document.getElementById('num1').value);
+        var num2 = parseInt(document.getElementById('num2').value);
+        var ope = document.getElementById('operator').value;
+        var result;
+      switch (ope)
+      {
+        case("+"):
+        {
+          result = num1 + num2;
+          break;
+        }
+        
+        case("-"):
+        {
+          result = num1 - num2;
+          break;
+        }
+
+        case("*"):
+        {
+          result = num1 * num2;
+          break;
+        }
+
+        case("/"):
+        {
+          result = num1 / num2;
+          break;
+        }
+
+        case("^"):
+        {
+          result = 1;
+          for (var i = 1; i <= num2; i++)
+          {
+            result *= num1;
+          }
+          break;
+        }
+        default:
+          result = "Invalid Operator";
+          
+        }
+
+        document.getElementById('result').innerHTML = result;
+        document.getElementById('output').innerText = result;
+      }
+
+      
+
+      
+
+    </script>
+
+
+
+  </body>
+</html>

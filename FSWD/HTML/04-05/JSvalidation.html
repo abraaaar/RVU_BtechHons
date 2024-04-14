@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 50px;
+        }
+    </style>
+    <script>
+        function validateEmail(email) {
+            const re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+
+
+        function validate(theForm) {
+
+            event.preventDefault(); // prevent form submission
+
+            var name = document.f1.name.value;
+            var password = document.f1.password.value;
+            var age = document.f1.age.value;
+            var email = document.f1.email.value;
+            var Description = document.f1.Description.value;
+            var section = document.f1.section.value;
+            var fileselect = document.f1.fileselect.value;
+            var reg = "^[a-zA-Z]+[\-'\s]?[a-zA-Z ]+$";
+            var status = false;
+
+
+
+            if (name.length <= 3) {
+                document.getElementById("nameloc").innerHTML =
+                    "<img src='https://www.freeiconspng.com/uploads/sign-error-icon-10.png' width='10px' height='10px'/> Please enter your name";
+                // alert('error');
+                var test = document.getElementsByClassName("test").value;
+                console.log(test + "dfdfdfdfdsfdsf");
+                status = false;
+            } else {
+                document.getElementById("nameloc").innerHTML = "<span style='color: green'><img src='https://www.freeiconspng.com/uploads/success-icon-2.png' width='10px' height='10px'/>validated</span>";
+                document.getElementById("nameval").innerHTML = "<span style='color: blue'> " + name + "</span>";
+                status = true;
+            }
+            console.log(age);
+            if (age <= 0 && age == "") {
+
+                document.getElementById("ageloc").innerHTML = "you entered invalid age please write it properly"
+                status = false;
+            } else {
+                document.getElementById("ageloc").innerHTML = "<span style='color: green'>entered valid data</span>";
+                document.getElementById("ageval").innerHTML = "<span style='color: blue'> your age is " + age + "</span>";
+                status = true;
+            }
+            if (password.length < 6) {
+                document.getElementById("passwordloc").innerHTML =
+                    "<img src='https://www.freeiconspng.com/uploads/sign-error-icon-10.png' width='10px' height='10px'/>Password must be at least 6 char long";
+                status = false;
+            } else {
+                document.getElementById("passwordloc").innerHTML = "<img src='https://www.freeiconspng.com/uploads/success-icon-2.png' width='10px' height='10px'/><span style=color:green>" + password.length + " char for password</span>";
+                status = true;
+            }
+            if (Description.length < 50) {
+                document.getElementById("Description").innerHTML =
+                    "<img src='https://www.freeiconspng.com/uploads/sign-error-icon-10.png' width='10px' height='10px'/> Please enter about your self about 50 char";
+                status = false;
+            } else {
+                document.getElementById("Description").innerHTML = "<img src='https://www.freeiconspng.com/uploads/success-icon-2.png' width='10px' height='10px'/> <span style=color:green>" + Description.length + "</span><span style=color:green> words is validated</span>";
+                status = true;
+            }
+
+            if (section.validate == "0") {
+                document.getElementById("section").innerHTML =
+                    "<img src='https://www.freeiconspng.com/uploads/sign-error-icon-10.png' width='10px' height='10px'/> Please enter about your self about 50 char";
+                status = false;
+            } else {
+                document.getElementById("section").innerHTML = "<img src='https://www.freeiconspng.com/uploads/success-icon-2.png' width='10px' height='10px'/>";
+                status = true;
+            }
+
+            if (
+                theForm.chk1.checked == false &&
+                theForm.chk2.checked == false &&
+                theForm.chk3.checked == false) {
+                document.getElementById("gender").innerHTML =
+                    "<img src='https://www.freeiconspng.com/uploads/sign-error-icon-10.png' width='10px' height='10px'/> Please choose your gender";
+                status = false;
+            } else {
+
+                document.getElementById("gender").innerHTML = "<img src='https://www.freeiconspng.com/uploads/success-icon-2.png' width='10px' height='10px'/>";
+                status = true;
+            }
+            const emailinput = email;
+            if (validateEmail(emailinput)) {
+                document.getElementById("emailloc").innerHTML = "<img src='https://www.freeiconspng.com/uploads/success-icon-2.png' width='10px' height='10px'/><span style='color: green'>valid email address</span>";
+                document.getElementById("emailval").innerHTML = "<span style='color: blue'>entered mail is" + email + "</span>"
+                status = true;
+            } else {
+                document.getElementById('emailloc').innerHTML = "please enter your email Id";
+                status = false;
+            }
+
+
+
+
+
+            return status;
+
+        }
+    </script>
+</head>
+
+<body>
+
+
+    <div class='container'>
+
+
+
+
+        <form name="f1" action="#" onsubmit="return validate(this)">
+            <table>
+                <h4>form field with java script validation </h4>
+                <tr>
+                    <td>Enter Name:</td>
+                    <td><input type="text" name="name" id="name" class="test" /> <span id="nameval" style="font-size:medium;"> </span>
+                        <br>
+                        <span style="color: red;" id="nameloc"></span>
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Enter Password:</td>
+                    <td><input type="password" name="password" />
+                        <br>
+                        <span style="color: red;" id="passwordloc"></span></td>
+                </tr>
+                <tr>
+                    <td>Enter your age:</td>
+                    <td><input type="number" name="age" /> <span id="ageval" style="font-size:medium;"> </span>
+                        <br>
+                        <span style="color: red;" id="ageloc"></span></td>
+                </tr>
+
+                <tr>
+                    <td>Enter your email Id:</td>
+                    <td><input type="email" name="email" />
+                        <span id="emailval" style="font-size:medium;"> </span>
+                        <br>
+                        <span style="color: red;" id="emailloc"></span></td>
+                </tr>
+
+                <tr>
+                    <td>tell me about your self</td>
+                    <td> <textarea rows="5" cols="50" name="Description"></textarea>
+                        <br>
+                        <span style="color: red;" id="Description"></span></td>
+                </tr>
+                <tr>
+                    <td>Select your Section from RVU</td>
+                    <td>
+                        <select name="section" id="section">
+                                <option value="">choose sectionfrom your
+                                    dropdown</option>
+                                <option value="1">A</option>
+                                <option value="2">B</option>
+                                <option value="3">C</option>
+                            </select>
+                        <br>
+                        <span style="color: red;" id="section"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> <label for="gender">Gender
+                            </label> </td>
+                    <td>
+                        <input type="radio" name="chk1" id="male" value="male">
+                        <label for="male">Male</label><br>
+                        <input type="radio" name="chk2" id="female" value="female">
+                        <label for="female">Female</label><br>
+                        <input type="radio" name="chk3" id="other" value="other">
+                        <label for="other">Other</label>
+                        <br>
+                        <span style="color: red;" id="gender"></span>
+                    </td>
+                    <br>
+                    </td>
+
+                    <tr>
+                        <tr>
+                            <td>
+                                <label>upload your picture</label>
+                            </td>
+                            <td>
+                                <input type="file" name="upload" id="fileselect">
+                            </td>
+                        </tr>
+                        <td colspan="2"><input type="submit" value="register" /></td>
+                    </tr>
+            </table>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+</html>

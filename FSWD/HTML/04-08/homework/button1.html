@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bulb 1</title>
+    </head>
+    <style>
+        .button
+        {
+            padding:10px
+        }
+        img
+        {
+            border:2px solid black;
+        }
+        body
+        {
+            background-color:lightblue;
+        }
+    </style>
+    <body>
+        <img id="bulb" width="350px" height="400px" src="https://w7.pngwing.com/pngs/859/425/png-transparent-light-bulb-illustration-incandescent-light-bulb-lamp-bulb-candle-product-light-thumbnail.png">
+        <br>
+        <button class="button" id="on" style="color:green;" onclick="bulbwow('on')">ON</button>
+        <button class="button" id="off" style="color:red;" onclick="bulbwow('off')">OFF</button>
+        <script>
+          function bulbwow(button){
+           var img = document.getElementById("bulb");
+            if(button == "on"){
+                img.src="https://e7.pngegg.com/pngimages/922/441/png-clipart-creative-bulb-lightbulb-energy-saving-lamps-thumbnail.png"
+          }
+            else if(button == "off"){
+                img.src="https://w7.pngwing.com/pngs/859/425/png-transparent-light-bulb-illustration-incandescent-light-bulb-lamp-bulb-candle-product-light-thumbnail.png"
+            }
+          }
+        </script>
+    </body>
+</html>

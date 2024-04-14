@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calstyle.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="border">
+        <div class="display" id="display"></div>
+        <table class="key-table">
+          <tr>
+            <td><button class="operators" id="clear">C</button></td>
+            <td><button class="operators" id="/">&divide;</button></td>
+            <td><button class="operators" id="*">&times;</button></td>
+            <td><button class="operators" id="backspace"><</button></td>
+          </tr>
+          <tr>
+            <td><button class="numbers" id="7">7</button></td>
+            <td><button class="numbers" id="8">8</button></td>
+            <td><button class="numbers" id="9">9</button></td>
+            <td><button class="operators" id="-">-</button></td>
+          </tr>
+          <tr>
+            <td><button class="numbers" id="4">4</button></td>
+            <td><button class="numbers" id="5">5</button></td>
+            <td><button class="numbers" id="6">6</button></td>
+            <td><button class="operators" id="+">+</button></td>
+          </tr>
+          <tr>
+            <td><button class="numbers" id="1">1</button></td>
+            <td><button class="numbers" id="2">2</button></td>
+            <td><button class="numbers" id="3">3</button></td>
+            <td><button class="operators" id="equal">=</button></td>
+          </tr>
+          <tr>
+            <td><button class="operators" id="(">(</button></td>
+            <td><button class="numbers" id="0">0</button></td>
+            <td><button class="operators" id=")">)</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      const display = document.getElementById("display");
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const buttonValue = button.textContent;
+          if (buttonValue === "C") {
+            display.textContent = "";
+          }
+          else if (buttonValue === "<") {
+            display.textContent = display.textContent.slice(0, -1);
+          }
+          else if (buttonValue === "=") {
+            try {
+              const result = eval(display.textContent);
+              display.textContent = result;
+            } catch (error) {
+              display.textContent = "Error";
+            }
+          }
+          else {
+            display.textContent += buttonValue;
+          }
+        });
+      });
+
+
+
+        // let display = document.getElementById("display");
+
+        // function wowo()
+        // {
+        //   let x = document.getElementById("Calci"),value;
+        //   alert("Value of X extracted from list is " + x);
+        //   console.clear();
+        //   switch(x)
+        //   {
+        //     case '+': alert("Inside Switch +");break;
+        //     case '-': alert("Inside Switch -");break;
+        //     case '*': alert("Inside Switch *");break;
+        //   }
+        //   if (x=='+')
+        //   {
+        //     alert("Inside If: X is +");
+        //   }
+        //   else if (x == '-')
+        //   {
+        //     alert("Inside If -")
+        //   }
+        // }
+
+    </script>
+  </body>
+</html>

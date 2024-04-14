@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculate Cost</title>
+</head>
+<body>
+  <h2>Calculate Cost</h2>
+
+  <label for="price-input">Price:</label>
+  <input type="number" id="price-input">
+
+  <label for="quantity-input">Quantity:</label>
+  <input type="number" id="quantity-input">
+
+  <button onclick="calculateCost()">Calculate</button>
+
+  <p id="price-display"></p>
+  <p id="quantity-display"></p>
+  <p id="cost-display"></p>
+
+  <script>
+    function calculateCost() {
+      var priceInput = document.getElementById("price-input");
+      var quantityInput = document.getElementById("quantity-input");
+
+      var price = parseFloat(priceInput.value);
+      var quantity = parseFloat(quantityInput.value);
+
+      
+
+
+
+      document.getElementById("quantity-display").innerHTML = "Quantity: " + quantity;
+      document.getElementById("price-display").innerHTML = "Price: $" + price.toFixed(2);
+
+      var cost = price * quantity;
+      document.getElementById("cost-display").innerHTML = "Cost: $" + cost.toFixed(2);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      a {
+        font-family: Arial, Helvetica, sans-serif;
+        float: left;
+        font-size: 20px;
+        color: rgb(225, 17, 17);
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 12px 16px;
+        z-index: 1;
+      }
+
+      /* .dropdown:hover .dropdown-content {
+        display: block;
+        background-color: rgb(202, 202, 49);
+        border: 1px solid gray;
+
+      } */
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="dropdown">
+        <button class="dropbtn" onclick="document.getElementById('wow').style.display='block'">
+          About RVU
+        </button>
+        <div class="dropdown-content" id="wow">
+          <a href="#">RVU at a Glance</a>
+          <a href="#">Leadership</a>
+          <a href="#">Faculty</a>
+          <a href="#">Infrastructure</a>
+          <a href="#">Collaborations</a>
+          <a href="#">Disclosures</a>
+          <a href="#">Approvals</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+
+    </script>
+  </body>
+</html>

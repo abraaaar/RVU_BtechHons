@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1 {
+        color: aliceblue;
+        text-align: center;
+    }
+
+    ul {
+        display: flex;
+        background-color: burlywood;
+        list-style: none;
+    }
+
+    li {
+        margin: 5px;
+        padding: 2px;
+        float: left;
+    }
+
+    body {
+        background-image: url("https://images.unsplash.com/photo-1536195892759-c8a3c8e1945e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YWVzdGhldGljfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60");
+    }
+
+    #x {
+        color: black;
+        background-color: bisque;
+        width: 40%;
+        padding-left: 20px;
+        margin-left: 20px;
+        border: black;
+        float: left;
+    }
+
+    #form-container {
+        display: block;
+        position:sticky;
+        flex-direction: column;
+        align-items: flex-start;
+        float:right;
+        margin-left:20px;
+        background-color: burlywood;
+        width:30%;
+        padding:20px;
+        
+    }
+
+    #form-container label {
+        margin-bottom: 10px;
+    }
+
+    #form-container button {
+        margin-top: 10px;
+    }
+    #list{
+        background-color: brown;
+        padding:2px;
+    }
+</style>
+
+<body>
+    <h1>FATIMA BAKERY</h1>
+    <nav>
+        <ul>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>CONTACT</li>
+        </ul>
+    </nav>
+    <img height="200px" width="200px" src="https://metrosaga.com/wp-content/uploads/2019/04/fatima.jpg"><br>
+    <br>
+
+    <div id="x">
+        <p>Started by his father, Vellara Porinchukutti Francis, in 1957, Fatima Bakery is one of Bengaluru's oldest bakeries. Francis came to the city, aged 16, from Kerala's Kunnamkulam and began working at an automobile company as a helper. It was a desire to do something after-hours that got him to start the bakery. Fifty-seven years since its inception, this bakery has many loyal customers who have made it their second home. The memories attached to this faithful bakery are numerous.</p>
+        <p>‘Mutton puffs’, ‘chicken puffs’, ‘samosa’, ‘coconut sweet’, ‘plum cake’, ‘rose cookies’, ‘mince pie’, ‘kulkul’... they have some traditional bakery products that are unmatched in taste compared to the modern-day bakeries. David, a dedicated gentleman, still sits at the bakery, ensuring the trust of the customers along with maintaining the quality of products. There is a “personalized touch” to all the bakery products as they are freshly produced in a separate unit.</p>
+    </div><br><br>
+
+    <div id="form-container">
+        <form onsubmit="return validateForm()">
+            <h2>FORM</h2>
+            <div id="list">
+            <label for="name">NAME:</label>
+            <input type="text" id="name"  onchange="fun1()"><br><br>
+
+            <label for="age">AGE:</label>
+            <input type="text" id="age"  onchange="fun2()"><br><br>
+
+            <label for="allergies" >allergies:</label>
+
+            <label for="allergies-1">1:</label>
+            <input type="radio" id="allergies-1" name="allergies" >
+
+            <label for="allergies-2">2:</label>
+            <input type="radio" id="allergies-2" name="allergies" ><br>
+
+            <label for="quantity">quantity</label>
+            <input type="number" id="quantity" ><br>
+
+
+            <select  id="desert" >
+                <option>cake</option>
+                <option>samosa</option>
+                <option>juice</option>
+            </select><br>
+            <button type="submit">Submit</button>
+            </div>
+            <p id="a"></p>
+            <p id="b"></p>
+            <p id="c"></p>
+            <p id="d"></p>
+            <p id="e"></p>
+            <p id="f"></p>
+            <script>
+            function validateForm() {
+                var name = document.getElementById("name").value;
+                document.getElementById("a").innerHTML = "Name: " + name;
+
+                var age = document.getElementById("age").value;
+                document.getElementById("b").innerHTML = "Age: " + age;
+
+                var allergies = document.querySelector('input[name="allergies"]:checked');
+                if (allergies) {
+                    document.getElementById("c").innerHTML = "Allergies: " + allergies.value;
+                } else {
+                    document.getElementById("c").innerHTML = "Allergies: None";
+                }
+
+                var desert = document.getElementById("desert").value;
+                document.getElementById("d").innerHTML = "item: " + desert;
+
+                var quantity = document.getElementById("quantity").value;
+                document.getElementById("e").innerHTML = "quantity " + quantity;
+
+                var c=30;
+                var j=20;
+                var s=15;
+                var total=0;
+
+                if(desert=="cake")
+                {
+                    total=quantity*c;
+                }
+                else if(desert=="juice")
+                {
+                    total=quantity*j;
+                }
+                else if(deseet=="samosa")
+                {
+                    total=quantity*s;
+                }
+                document.getElementById("f").innerHTML="Hello "+name+". You need to pay: Rs"+total+". We have taken care of your allergy requirements in this item.";
+
+                return false; 
+            }
+            </script>
+        </form>
+    </div>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/hqfbIxmt9bc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</body>
+</html>

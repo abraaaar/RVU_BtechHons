@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <style>
+        .wow,
+        .test-pic
+        {
+            font-size: 50px;
+            font-weight: 900;
+            background-color: lightblue;
+            color: green;
+            width: 300px;
+            height: 300px;
+            border-radius: 600px;
+            transition-delay: 0.05s;
+            transition-duration: 0.4s; 
+            transition-property: all;
+            transition-timing-function: ease;
+
+        }
+        .wow:hover,
+        .test-pic:hover 
+        {
+            background-color: green;
+            color: lightblue ;
+            cursor: pointer;
+        }
+
+        .text-anim
+        {
+            color: blue;
+        }
+
+        
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <h1>Hello wowo</h1><span class="test-anim"></span>
+    <button class="wow">
+        <!-- <img src="testpic.jpg" class="test-pic"> -->WOW
+    </button>    
+
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('.text-anim', {
+          strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
+          typeSpeed: 50,
+        });
+      </script>
+
+</body>
+</html>

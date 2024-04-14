@@ -1,0 +1,24 @@
+.title-heading{
+  font-family: Arial, Roboto;
+  font-weight: 700;
+  color: chartreuse;
+}
+
+.container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sub-heading,
+.couse1,
+.course2,
+.course3{
+  position: absolute;
+  display: inline-block;
+}
+
+.sub-heading{
+  margin: 100px;
+}

@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>SEE QP</title>
+        <script src="script.js"></script>
+        <link href="style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <ul>
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Contact Us</li>
+            </ul>
+        </header>
+
+        <div class="main">
+            <div class="content">
+                <p>bakery slay</p>
+
+                <iframe width="100%" height="100%" src="https://www.youtube.com/watch?v=atxCI8KdYe0&pp=ygUNY29mZmVlIGJyZWF0aA%3D%3D" allowfullscreen></iframe>
+
+                <audio controls>
+                    <source src="C:\Users\Reji Verghese\Music\locals\misc\Cleopatra (voice memo).mp3" type="audio/mp3">
+                </audio>
+            </div>
+
+            <div class="form">
+                <h1>Form</h1>
+                <div class="aaa">
+                    <label>Name: </label>
+                    <input type="text" id="name" required><br><br>
+
+                    <label>Items: </label>
+                    <select id="items">
+                        <option disabled selected>Pick an Item</option>
+                        <option value="100">Cake</option>
+                        <option value="10">Bun</option>
+                        <option value="30">Roll</option>
+                        <option value="20">Puff</option>
+                        <option value="15">Bread</option>
+                    </select><br><br>
+
+                    <label>Quantity: </label>
+                    <input type="number" id="qty" required><br><br>
+
+                    <label>Type: </label><br>
+                    <input type="radio" id="veg" required>
+                    <label>Vegetarian</label><br>
+                    <input type="radio" id="nveg" required>
+                    <label>Non-Vegetarian</label><br><br>
+
+                    <label>Allergies: </label><br>
+                    <input type="checkbox" id="li">
+                    <label>Lactose Intolerance</label><br>
+                    <input type="checkbox" id="pa">
+                    <label>Peanut Allergy</label><br>
+                    <input type="checkbox" id="all">
+                    <label>Allergic to all nuts</label><br>
+                </div>
+
+                <button id="submitBtn" onclick="changeText()">Submit</button>
+                <p id="d1"></p>
+
+            </div>
+        </div>
+
+        <footer>
+            <ul>
+                <li>22.06.2023</li>
+            </ul>
+        </footer>
+    </body>
+</html>

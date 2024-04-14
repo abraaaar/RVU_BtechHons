@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLute Music Devices</title>
+    <link rel="stylesheet" href="1.css" />
+    <!--Below are the exported fonts from Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="1.js"></script>
+    <style>
+        footer{  
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            position: absolute;
+            bottom: -10;
+            left: 0;
+            right: 0;
+            background-color: aliceblue;
+        }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#images">IMAGES</a></li>
+        <li><a href="#videos">VIDEOS</a></li>
+        <li><a href="#form-container">PLACE ORDER</a></li>
+        <li><a href="#credits">CREDITS</a></li>
+      </ul>
+    </nav>
+    <audio src="music.mp3"></audio>
+    <div class="top-image" style="
+        margin: 20px;
+      position: absolute;
+    display: inline-block;
+    height: 20px;
+    width: 200px;
+    border-width: 10px;
+    " >
+        <img height="200px" width="200px" src="https://wallpapercave.com/wp/wp5023482.jpg" />
+    </div>
+    <br />
+    <br />
+
+    <div id="container">
+      <div class="paras" id="home">
+        <p>Music is a vital part of different moments of human life. Musical Instruments play a key role in helping to define this artform of music. One such Prominent Musical Instrument is Flute. FLute gained popularity in indian beacause Lord Krishna loved to play this specific instrument.<br>
+        Flute is a member of a family of musical instruments in the woodwind group. Like all woodwinds, flutes are aerophones, producing sound with a vibrating column of air. Some Types of flute are: <b>Piccolo Flute</b>, <b>Alto Flute</b>, <b>Bass FLute</b>, <b>Wooden Flute</b>, Concert Flute <i>etc.</i> Each type has its own unique specifications but all of them work on the same principle of aerophones and produce melodious sounds for generations to enjoy.</p>
+
+        <div id="form-container">
+            <form onsubmit="return validateForm()">
+              <h2>Place Order</h2>
+              <div id="list">
+                <label for="name">Name: </label>
+                <input type="text" id="name" onchange="validate()" /><br /><br />
+    
+                <label for="age">Age: </label>
+                <input type="text" id="age" onchange="" /><br /><br />
+    
+                <label for="dt">Delivery Time (days):</label>
+    
+                <label for="dt-1">1:</label>
+                <input type="radio" id="dt-1" name="dt" />
+    
+                <label for="dt-2">2:</label>
+                <input type="radio" id="dt-2" name="dt" /><br />
+    
+                <label for="quantity">quantity</label>
+                <input type="number" id="quantity" /><br />
+                <br>
+                <label for="checkbox">Version:</label><br>
+                <label for="option1">Mini</label>
+                <input type="checkbox" id="option1">
+                <label for="option2">Normal</label>
+                <input type="checkbox" id="option2">
+                <label for="option3">Premium</label>
+                <input type="checkbox" id="option3">
+                <br>
+
+                <label for="flute">Flute type</label>
+                <select id="flute">
+                  <option>Piccolo</option>
+                  <option>Alto</option>
+                  <option>Concert</option></select
+                ><br />
+                <button onclick="validateForm()">Submit</button>
+              </div>
+              <span id="a"></span>
+              <span id="b"></span>
+              <span id="c"></span>
+              <span id="d"></span>
+              <span id="e"></span>
+              <span id="f"></span>
+            </form>
+          </div>
+      </div>
+      <div id="images">
+        <h1>TYPES OF FLUTES</h1>
+        <img class="imgg" src="https://images.recording-history.org/wp-content/uploads/2021/04/1-piccolo-flute.jpg">
+        <img class="imgg" src="https://images-na.ssl-images-amazon.com/images/I/31khTRQ7ouL._AC_.jpg">
+        <img class="imgg" src="https://images-na.ssl-images-amazon.com/images/I/71mH5hKAP7L._AC_SL1500_.jpg">
+        <img class="imgg" src="https://images-na.ssl-images-amazon.com/images/I/41DkgwjjdfL._AC_.jpg">
+        <img class="imgg" src="https://images-na.ssl-images-amazon.com/images/I/61Vs4NfDc3L._AC_SL1000_.jpg">
+      </div>
+
+      <div id="videos">
+        <h1>KNOW MORE ABOUT FLUTES</h1>
+        <div class="vid">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/6d38uvCwYwU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        
+        <div class="vid">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/5MoO7fufFC0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div> 
+        
+        
+      </div>
+
+      
+
+      
+    </div>
+    <footer id="credits">
+        <h6 style="text-align: center; font-weight: 500; font-size: 11px;"  >Name: Abrar Hussain<br>Credits: 
+            wallpapercave<br>
+            recording-history,org</h6>
+      </footer>  
+  </body>
+</html>

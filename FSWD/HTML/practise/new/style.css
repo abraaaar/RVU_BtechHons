@@ -1,0 +1,36 @@
+ul
+{
+    display: flex;
+    list-style: none;
+}
+
+li
+{
+    margin: 10px;
+}
+
+header,footer
+{
+    background-color: darkblue;
+    color: white;
+}
+
+.main
+{
+    display: flex;
+}
+
+.content
+{
+    background-color: antiquewhite;
+}
+
+.form
+{
+    background-color: aquamarine;
+}
+
+.aaa
+{
+    background-color: wheat;
+}

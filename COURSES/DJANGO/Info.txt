@@ -1,0 +1,105 @@
+Django is used by Youtube, Instagram, Spotify, Dropbox etc.
+Django features: 
+It is a batteries included framework
+1. The admin site 
+2. ORM(Object-relational mapper)
+3. Authentication Package
+4. Cache Package
+
+Web has two parts: Frontend(that the user sees) and Backend (where the real stuff happens). When a user types the url www.abrar.com, it will send an HTTP request to the server(backend) which will then send the required page(HTML Page).
+
+But what if we want the client to control the HTML and we just send the data, this will inturn free the server to handle even more users.
+So we use Django for that and for frontend, React Angular, Vue etc
+
+Django Provides an API(Application Programming Interface) its like the server has end points, one for one thing, another for other thing, and client gets to choose which point it wants to access
+
+Initial Commands:
+pip3 install pipenv 
+
+goto the directory
+
+pipenv install Django
+it will create virtual environment for the directory and create two files in the directory, Pipfile and Pipfile.lock
+
+pipevn shell
+starts the virtual environment
+
+
+
+Django Commands:
+django-admin
+
+django-admin startproject <name>
+or 
+django-admin startproject <name> .
+this will tell Django to start the project in the same directory as you are currently in
+
+pipenv --venv
+we can get the location of our virtual environment
+then in vs code we can set Python Interpreter to that of our virtual environment
+
+then python manage.py runserver
+
+Ctrl+B in vscode to collapse the sidepanel
+
+head over to settings.py
+and then see the installed apps, delete the sessions app because we don't use it
+admin app: which gives us an admin interface for managing our data
+auth app: which is used for authenticating users
+content types app: which allows you to create generic relationships between models, tracking all models in your project
+the sessions app: which is kind of legacy we don't use sessions anymore a session is a temporary memory on the server for managing users data these days when building apis with django, we don't use the sessions app so we can delete this app
+the messages app: which is used for displaying one-time notifications to the user
+the static files app: for serving static files like images css files and so on so each app provides a certain piece of functionality
+WE CAN CREATE OUR OWN APPS ALSO
+
+now lets make our app
+python manage.py startapp <appname>
+it will create the folder <appname> with a migrations folder inside and various files
+admin.py: where we define how the admin interface for this app is going to look like
+apps.py: where we configure this app 
+models.py: where we define the model classes for this app, we use model classes to pull out data from the database and present to the user
+tests.py: where we write our unit tests 
+views.py: which is a request handler it's not a view it doesn't have a template or html
+
+add your app name the the installed apps in the settings
+
+views.py
+from django.http import HttpResponse
+def say_hello(request):
+    return HttpResponse("Hello World");
+this function will return an Response to the web request in the form of the text that is "Hello World"
+
+now what we are doing is we are making a function that returns a response when a certain url is typed
+
+we can make our own url.py file and then we can type in urls.py
+from django.urls import path
+from . import views
+urlpatterns = [
+  path('wow/', views.say_hello)
+]
+this basically says whenever there is a url that ends with wow/ , make it do what views.say_hello function does
+
+
+now we can go back to our main urls.py 
+and
+from django.urls import path, include
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('myappwow/', include('myappwow.urls'))
+]
+
+
+path('myappwow/', include('myappwow.urls'))
+this line tells the django whenever the url starts with myappwow/let myappwow.urls handle it
+
+and it will work
+
+
+now in myappwow
+create a folder templates
+in there create a template.html 
+
+now in your views.py 
+instead of returning "Hello World" we will type
+return render(request, '<template.html name>')
+and now it will show the template

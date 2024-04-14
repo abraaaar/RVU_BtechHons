@@ -1,0 +1,69 @@
+body
+{
+    background: url(bg.jpg) center;
+    background-size: 890px 200px;
+    background-position-x: center;
+    background-position-y: center;
+    padding-bottom: 3000px;
+    font-family: Poppins, Arial;
+}
+
+
+
+
+.header
+{
+    z-index: 100;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    right: 20%;
+    top: 0;
+    left: 20%;
+    position: absolute;
+    background-color: black;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(216, 178, 178);
+    min-width: 990px;
+}
+
+
+
+.header-logo
+{
+    margin-left: 24px;
+    margin-right: 24px;
+    display: flex;
+}
+
+.header-logo img
+{
+    height: 65px;
+}
+
+.header-links
+{   
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-left: 80px;
+}
+
+.header-home,
+.header-features,
+.header-order,
+.header-about,
+.header-contact
+{
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    background-color: lightcoral;
+    color: white;
+    padding-right: 50px;
+    padding-left: 50px;
+}

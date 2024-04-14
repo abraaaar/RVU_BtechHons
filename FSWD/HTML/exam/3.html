@@ -1,0 +1,36 @@
+<html>
+
+<body>
+  <h3>Are you a Dog or Cat Lover?</h3>
+  Yes: <input type="Radio" id="radio1" value="Dog Lover" onclick="checkRadio()">;
+  No: <input type="radio" id="radio2" value="Cat Lover" onclick="checkRadio()">;
+  <h4 id="Animal" style="
+    color: green;
+  "></h3>
+  <h4 id="error" style="color: red;"></h3>
+
+
+    <script>
+      function checkRadio()
+      {
+        yes.checked = false ; no.checked = false;
+        var yes = document.getElementById('radio1');
+        var no = document.getElementById('radio2');
+
+        if (yes.checked = true && no.checked == false){
+          var y = document.getElementById("radio1");
+          document.getElementById('animal').innerHTML = y;
+        }
+
+        if (no.checked == true && no.checked == false){
+          var y = document.getElementById('radio1');
+          document.getElementById('animal').innerHTML = n;
+        }
+
+        if (yes.checked == true && no.checked == true){
+          document.getElementById('error').innerHTML = "Mark only  one Radio";
+        }
+      }
+    </script>
+</body>
+</html>

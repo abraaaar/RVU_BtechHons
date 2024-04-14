@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bulb 2</title>
+    </head>
+    <style>
+        .button
+        {
+            padding:10px
+        }
+        img
+        {
+            border:2px solid rgb(207, 8, 8);
+        }
+        body
+        {
+            background-color: lightblue;
+        }
+    </style>
+    <body>
+        <img id="bulb" width="350px" height="350px" src="https://previews.123rf.com/images/ericmilos/ericmilos0912/ericmilos091200136/6109526-3d-render-of-light-bulb-on-white.jpg">
+        <br>
+        <button class="button" id="toggle" style="color:green;" onclick="toggleBulb()"><u>ON</u></button>
+        <script>
+          function toggleBulb(){
+            var img = document.getElementById("bulb");
+            var button = document.getElementById("toggle");
+            if(img.src == "https://previews.123rf.com/images/ericmilos/ericmilos0912/ericmilos091200136/6109526-3d-render-of-light-bulb-on-white.jpg"){
+                img.src="https://img.freepik.com/free-vector/realistic-light-bulb-with-electricity_23-2149129410.jpg?size=626&ext=jpg";
+                button.style.color = "red";
+                button.innerHTML = "<u>OFF</u>";
+            } else {
+                img.src="https://previews.123rf.com/images/ericmilos/ericmilos0912/ericmilos091200136/6109526-3d-render-of-light-bulb-on-white.jpg";
+                button.style.color = "green";
+                button.innerHTML = "<u>ON</u>";
+            }
+          }
+        </script>
+    </body>
+</html>

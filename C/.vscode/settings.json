@@ -1,0 +1,7 @@
+{
+    "C_Cpp.errorSquiggles": "enabled",
+    "files.associations": {
+        "5.C": "cpp",
+        "C.C": "cpp"
+    }
+}

@@ -1,0 +1,46 @@
+<html>
+<head><title>JS Event handling</title>
+<style>
+.container {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+padding-top: 50px;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<label>Choose your Operation</label>
+<select id="calci" onCHange="calciFunction()">
+<option value = "+">Add</option>
+<option value = "-">Sub</option>
+<option value = "*">Mul</option>
+</select>
+</div>
+<script>
+function calciFunction()
+{
+  
+let x = document.getElementById("calci").value;
+alert("Value of X extracted from list is " + x);
+console.clear();
+switch(x)
+{
+case '+': alert(" Inside Switch +");break;
+case '-': alert(" Inside Switch -");break;
+case '*': alert(" Inside Switch *");break;
+
+}
+if(x == '+')
+alert(" Inside If : X is +");
+else if(x == '-')
+alert(" Inside If -");
+
+}
+</script>
+</body>
+</html>
+
+mouse events up down double click

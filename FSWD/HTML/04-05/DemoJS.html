@@ -1,0 +1,65 @@
+<html>
+
+<head>
+<title> Demo Javascript</title>
+<script>
+    function validate(theForm) {
+        var status = false;
+        var name = document.f1.name.value;
+        var password = document.f1.password.value;
+        
+        if (name.length < 1) {
+            document.getElementById("nameloc").innerHTML =
+                "<img src='https://www.freeiconspng.com/uploads/sign-error-icon-10.png' width='10px' height='10px'/> Please enter your name";
+            status = false;
+        } else {
+            document.getElementById("nameloc").innerHTML = "<img src='https://www.freeiconspng.com/uploads/success-icon-2.png' width='10px' height='10px'/>";
+            status = true;
+        }
+        if (password.length < 6) {
+            document.getElementById("passwordloc").innerHTML =
+                "<img src='https://www.freeiconspng.com/uploads/sign-error-icon-10.png' width='10px' height='10px'/>Password must be at least 6 char long";
+            status = false;
+        } else {
+            document.getElementById("passwordloc").innerHTML = "<img src='https://www.freeiconspng.com/uploads/success-icon-2.png' width='10px' height='10px'/><span style=color:green>" + password.length + " char for password</span>";
+            status = true;
+        }
+
+        /*var extract = document.getElementById("nameloc").innerHTML;   
+        alert(extract); */
+
+    } //end of validate function 
+    </script>
+</head>
+
+<body>
+
+    <form name="f1" action="#" onsubmit="return validate(this)">
+            <table>
+                <h4>form field with java script validation </h4>
+                <tr>
+                    <td>Enter Name:</td>
+                    <td><input type="text" name="name"/>
+                        <br>
+                        <span style="color: green;" id="nameloc"></span></td>
+                </tr>
+                <tr>
+                    <td>Enter Password:</td>
+                    <td><input type="password" name="password"/>
+                        <br>
+                        <span style="color: red;" id="passwordloc"></span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>upload your picture</label>
+                    </td>
+                    <td>
+                        <input type="file" name="upload" id="fileselect">
+                    </td>
+                </tr>
+                <tr><td colspan="2"><input type="submit" value="register" /></td></tr>
+            </table>
+        </form>
+</body>
+    
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather Search</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "Bebas Neue", sans-serif;
+      }
+      body {
+        background-image: url("https://w0.peakpx.com/wallpaper/834/65/HD-wallpaper-london-bridge-river-cloudy-weather-city.jpg");
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      h1 {
+        color: rgb(27, 228, 0);
+        font-size: 40px;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        width: 250px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+      }
+
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #d67d17;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #temperature {
+        color: white;
+        font-size: 50px;
+        margin-top: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <h1>Type in cityName to get the weather</h1>
+      <br />
+      <form id="weatherForm">
+        <input
+          type="text"
+          id="cityName"
+          placeholder="Enter cityName"
+          required
+        />
+        <input type="submit" value="Search" />
+      </form>
+      <br /><br />
+      <div id="temperature"></div>
+    </center>
+
+    <script>
+      document
+        .getElementById("weatherForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          var cityName = document.getElementById("cityName").value;
+          fetch(
+            "https://api.openweathermap.org/data/2.5/weather?q=" +
+              cityName +
+              "&appid=26ed643db697830e29d959d71c244c99"
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              var temperature = Math.round(data.main.temp - 273.15);
+              document.getElementById("temperature").innerHTML =
+                "Temperature: " + temperature + "°C";
+            })
+            .catch((error) => {
+              console.log(error);
+              document.getElementById("temperature").innerHTML =
+                "Error occurred while fetching weather data.";
+            });
+        });
+    </script>
+  </body>
+</html>

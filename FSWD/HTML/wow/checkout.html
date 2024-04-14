@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CheckoutPage</title>
+	<style>
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		input[type="submit"] {
+			margin-top: 20px;
+			padding: 10px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #3E8E41;
+		}
+
+		.error {
+			color: red;
+			font-size: 12px;
+			margin-left: 5px;
+		}
+
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background: url(background.png);
+		}
+	</style>
+
+<body>
+	<h1 style="color:rgb(133, 0, 133); font-size: 65px; text-decoration: underline;">Checkout</h1>
+	<h2 style="color: rgb(133, 0, 133); margin-top: -10px; font-size: 50px;">Price: $10</h2>
+
+	<form onsubmit="return validateForm()">
+		<label style="color:rgb(133, 0, 133);" for="name">Name:</label>
+		<input type="text" id="name" name="name"><br>
+
+		<label style="color:rgb(133, 0, 133);" for="email">Email:</label>
+		<input type="email" id="email" name="email"><br>
+
+		<label style="color:rgb(133, 0, 133);" for="phonenumber">Mobile No.:</label>
+		<input type="text" id="" name="phonenumber"><br>
+
+		<button type="submit" style="color: rgb(133, 0, 133);" formaction="checkout2.html">Submit</button>
+	</form>
+
+	<script>
+
+		function validateForm() {
+			var name = document.forms[0]["name"].value;
+			var email = document.forms[0]["email"].value;
+			var age = document.forms[0]["phonenumber"].value;
+			if (name == "") {
+				alert("Name must be filled out");
+				return false;
+			}
+
+			if (email == "") {
+				alert("Email must be filled out");
+				return false;
+			}
+
+			if (!/\.com|\.edu|\.org|\.net$/.test(email)) {
+				alert("Email must contain only one of the following domain extensions: .com, .edu, .org, .net");
+				return false;
+			}
+
+			if (phonenumber == "") {
+				alert("Phone number must be filled out");
+				return false;
+			}
+
+			if (!/^\+91\d{10}$/.test(phoneNumber)) {
+				alert("Invalid phone number format. The phone number must start with +91 and contain 10 digits after that.");
+				return false;
+			}
+
+			return true;
+
+		}
+
+	</script>
+</body>
+
+</html>

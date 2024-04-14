@@ -1,0 +1,36 @@
+<html>
+    <head> 
+    <script> 
+            
+        function square(myForm)
+        {
+            event.preventDefault(); // prevent form submission
+                var test = document.getElementsByClassName("test").value;
+                var num = document.f1.name.value;
+                var answer = num*num; 
+                console.log(test + "dfdfdfdfdsfdsf");
+                document.getElementById("nameloc").innerHTML = "<span style='color: green'>validated</span>";
+                document.getElementById("nameval").innerHTML = "<span style='color: blue'> " + answer + "</span>";  
+                 
+        }
+        
+    </script>
+</head>
+<body>
+    <form name="f1" action="#" onsubmit="return square(this)">
+        <table>
+            <h4>LEARNING INSIDE JS</h4>
+            <tr>
+                <td>Enter Name:</td>
+                <td><input type="number" name="name" id="name" class="test" /> <span id="nameval" style="font-size:medium;"> </span>
+                    <br>
+                    <span style="color: red;" id="nameloc"></span>
+                    
+                </td>
+               
+
+            </tr>
+            <tr><td colspan="2"><input type="submit" value="ClickMe" /></td></tr>
+        </table>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      outline: 0;
+      transition: all 0.5s ease;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(to bottom right, rgb(203, 203, 110), white);
+      font-family: Pacifico, Roboto, Arial;
+    }
+
+    .container {
+      height: 10vh;
+      width: 25vw;
+      display: grid;
+    }
+
+    .border {
+      position: relative;
+      line-height: 1.3;
+      margin: 10px;
+      padding: 10px;
+      font-size: 20px;
+      border: 3px solid rgb(121, 214, 14);
+      border-radius: 30px;
+      background-color: white;
+      margin-bottom: 20px;
+      font-weight: 500;
+      color: rgb(109, 14, 104);
+      background: linear-gradient(to top left, rgb(25, 202, 158), rgb(23, 208, 72)) ;
+    }
+  </style>
+  <head>
+    <title>JavaWow</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="border">
+        <h3 id="display1"></h3>
+      </div>
+      <div class="border">
+        <h3 id="display2"></h3>
+      </div>
+      
+    </div>
+
+    <script>
+      //Display 1
+      let superhuman1 = ["Potter", "Voldemort", "Hermione"];
+      let cartoon1 = "";
+      for (let i = 0; i < superhuman1.length; i++) {
+        cartoon1 += superhuman1[i] + "<br>";
+        console.log(cartoon1);
+      }
+      document.getElementById("display1").innerHTML = cartoon1;
+
+      //Display 2
+      let superhuman2 = {character:"Super Man", power:"Flying", created:"DC Comics"};
+      let cartoon2 = "";
+      for (let key in superhuman2)
+      {
+        cartoon2 += key + " ";
+        console.log(key);
+      }
+      document.getElementById("display2").innerHTML = cartoon2;
+
+
+    </script>
+  </body>
+</html>
+

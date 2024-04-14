@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <body style="background: url(https://t3.ftcdn.net/jpg/04/16/97/74/360_F_416977415_2honZHq2HwlaB7GxMRMnYu4ib0RSgPPZ.jpg);
+  background-size: cover;
+  ">
+
+    <form>
+      <label for="name" style="font-size: 25px; color: yellow;">Camera Name: </label>
+      <input type="text" id="name">
+      <br><br>
+      <label for="number" style="font-size: 25px; color: yellow;">Cost:</label>
+      <input type="number" id="number">
+      <button onclick="fun()">Purchase</button>
+      <p id="result"></p>
+    </form>
+
+ <script>
+  function fun()
+  {
+    var name = document.getElementById('name').value;
+    var number = document.getElementById('number');
+
+    var num = parseFloat(number.value);
+  
+    document.getElementById('result').innerHTML = "Name: " + name + "<br>" + "Number: " + num;
+  }
+ </script>
+</body>
+</html>

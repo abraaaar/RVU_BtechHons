@@ -1,0 +1,45 @@
+<html>
+  <body>
+    <form>
+
+      <button id="cake" onclick="fun('Cake')">Cake</button>
+      <button id="pastry" onclick="fun('Pastry')">Pastry</button>
+      <button id="ice-cream" onclick="fun('Ice-Cream')">Ice-Cream</button>
+
+      <label for="price">Price:</label>
+      <span id="Price"></span>
+
+      <label for="quantity">Quantity: </label>
+      <input type="number" id="quan">
+
+      <div id="final-price"></div>
+
+    </form>
+
+    <script>
+      function fun(item)
+      {
+        var price;
+        switch (item)
+        {
+          case "Cake":
+            price = 20;
+            break;
+          case "Pastry":
+            price = 30;
+            break;
+          case "Ice-Cream":
+            price = 50;
+            break;
+          default:
+            price = "Invalid";
+        }
+
+        var quantity = document.getElementById('quan').value;
+        document.getElementById('Price').innerText = price;
+        document.getElementById('final-price').innerHTML = price * quantity;
+      }
+    </script>
+
+  </body>
+</html>

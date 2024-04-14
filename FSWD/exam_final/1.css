@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, Arial;
+}
+
+h1 {
+    margin-left: -700px;
+    text-align: center;
+    color: #426696;
+    font-weight: 600;
+    font-size: 3rem;
+    opacity: 0.8;
+  }
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover{
+    cursor: pointer;    
+}
+.wow-p{
+    font-size: 20px;
+    color: black;
+}
+ul {
+  display: flex;
+  background-color: white;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3)
+    );
+    height: 100px;
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(2rem);
+    display: flex;
+  }
+
+li {
+  margin: 5px;
+  padding: 2px;
+  float: left;
+}
+
+body {
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+}
+
+p {
+    color: #426696;
+    font-weight: 600;
+    font-size: 20px;
+    opacity: 0.8;
+    width: 40%;
+    padding-left: 20px;
+    margin-left: 20px;
+   
+}
+.paras{
+    margin-left: 230px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: auto;
+    padding: 20px;
+    width: auto;
+}
+
+
+#images,
+#videos,
+#form,
+#credits {
+    margin-top: 200px;
+}
+
+.imgg{
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+}
+
+.vid{
+    margin: 50px;
+}
+#form-container {
+    height: 500px;
+  display: block;
+  position: sticky;
+  flex-direction: column;
+  align-items: flex-start;
+  float: right;
+  margin-left: 20px;
+  background-color: rgb(93, 174, 180);
+  width: 30%;
+  padding: 20px;
+  
+}
+
+#form-container label {
+  margin-bottom: 10px;
+}
+
+#form-container button {
+  margin-top: 10px;
+}
+#list {
+  background-color: rgb(4, 82, 134);
+  padding: 2px;
+}

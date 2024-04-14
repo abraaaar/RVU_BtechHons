@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product/Service Booking Form</title>
+	<style>
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		input[type="submit"] {
+			margin-top: 20px;
+			padding: 10px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		input[type="submit"]:hover {
+			background-color: #3E8E41;
+		}
+		.error {
+			color: red;
+			font-size: 12px;
+			margin-left: 5px;
+		}
+		body{
+			display: flex;
+            flex-direction: column;
+            align-items: center;
+         background-color:black;
+		}
+	</style>
+<body>
+	<h1 style="color:beige;">BOOKING DETAILS</h1>
+
+	<form onsubmit="return validateForm()">
+		<label style="color:beige;" for="name">Name:</label>
+		<input type="text" id="name" name="name"><br>
+
+		<label style="color:beige;" for="email">Email:</label>
+		<input type="email" id="email" name="email"><br>
+
+		<label style="color:beige;" for="phonenumber">phone NO:</label>
+		<input type="text" id="" name="phonenumber"><br>
+
+		<label style="color:beige;" for="team">Team:</label>
+		<input type="text" id="team" name="team"><br>
+
+		<button type="submit">Submit</button>
+	</form>
+
+	<script>
+		function validateForm() {
+			var name = document.forms[0]["name"].value;
+			var email = document.forms[0]["email"].value;
+			var age = document.forms[0]["phonenumber"].value;
+            var team =document.forms[0]["team"].value;
+
+			if (name == "") {
+				alert("Name must be filled out");
+				return false;
+			}
+
+			if (email == "") {
+				alert("Email must be filled out");
+				return false;
+			}
+
+			if (phonenumber =="") {
+				alert("You must be 18 or older to submit this form");
+				return false;
+			}
+			if(team=="") {
+					alert("You must be 18 or older to submit this form");
+					return false;
+			}
+
+			return true;
+		}
+	</script>
+</body>
+</html>

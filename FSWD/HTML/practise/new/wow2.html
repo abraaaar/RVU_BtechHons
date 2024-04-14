@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wowowowo</title>
+</head>
+<style>
+    h1 {
+        color: rgb(19, 123, 214);
+        text-align: center;
+    }
+
+    ul {
+        display: flex;
+        background-color: rgb(209, 80, 241);
+        list-style: none;
+    }
+
+    li {
+        margin: 5px;
+        padding: 2px;
+        float: left;
+    }
+
+    body {
+        background-image: url("https://assets.telegraphindia.com/telegraph/2022/Aug/1661330990_cats.jpg");
+        background-size: cover;
+    }
+
+    #x {
+        color: black;
+        background-color: rgb(231, 124, 213);
+        width: 20%;
+        padding-left: 20px;
+        margin-left: 20px;
+        border: black;
+        float: left;
+    }
+
+    #form-container {
+        display: block;
+        position:sticky;
+        flex-direction: column;
+        align-items: flex-start;
+        float:right;
+        margin-left:20px;
+        background-color: rgb(209, 139, 223);
+        width:30%;
+        padding:20px;
+        
+    }
+
+    #form-container label {
+        margin-bottom: 10px;
+    }
+
+    #form-container button {
+        margin-top: 10px;
+    }
+    #list{
+        background-color: rgb(181, 39, 209);
+        padding:2px;
+    }
+</style>
+
+<body>
+    <h1>TERESA SLAYY</h1>
+    <nav>
+        <ul>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>CONTACT</li>
+        </ul>
+    </nav>
+    <img height="200px" width="200px" src="https://play-lh.googleusercontent.com/_gl2gP-HinFUcniDVO-SbS3LulcY1iGKwZfvf0T5ulC_9kVe0U8HeSxP7vJUZ6i-UA=w800-h500-rw"><br>
+    <br>
+
+    <div id="x">
+        <p>I like kids</p>
+        <p>I hate waeman</p>
+    </div><br><br>
+
+    <div id="form-container">
+        <form onsubmit="return validateForm()">
+            <h2>FORM</h2>
+            <div id="list">
+            <label for="name">NAME:</label>
+            <input type="text" id="name"  onchange="fun1()"><br><br>
+
+            <label for="age">AGE:</label>
+            <input type="text" id="age"  onchange="fun2()"><br><br>
+
+            <label for="allergies" >allergies:</label>
+
+            <label for="allergies-1">1:</label>
+            <input type="radio" id="allergies-1" name="allergies" >
+
+            <label for="allergies-2">2:</label>
+            <input type="radio" id="allergies-2" name="allergies" ><br>
+
+            <label for="quantity">quantity</label>
+            <input type="number" id="quantity" ><br>
+
+
+            <select  id="desert" >
+                <option>cake</option>
+                <option>samosa</option>
+                <option>juice</option>
+            </select><br>
+            <button type="submit">Submit</button>
+            </div>
+            <p id="a"></p>
+            <p id="b"></p>
+            <p id="c"></p>
+            <p id="d"></p>
+            <p id="e"></p>
+            <p id="f"></p>
+            <script>
+            function validateForm() {
+                var name = document.getElementById("name").value;
+                document.getElementById("a").innerHTML = "Name: " + name;
+
+                var age = document.getElementById("age").value;
+                document.getElementById("b").innerHTML = "Age: " + age;
+
+                var allergies = document.querySelector('input[name="allergies"]:checked');
+                if (allergies) {
+                    document.getElementById("c").innerHTML = "Allergies: " + allergies.value;
+                } else {
+                    document.getElementById("c").innerHTML = "Allergies: None";
+                }
+
+                var desert = document.getElementById("desert").value;
+                document.getElementById("d").innerHTML = "item: " + desert;
+
+                var quantity = document.getElementById("quantity").value;
+                document.getElementById("e").innerHTML = "quantity " + quantity;
+
+                var c=30;
+                var j=20;
+                var s=15;
+                var total=0;
+
+                if(desert=="cake")
+                {
+                    total=quantity*c;
+                }
+                else if(desert=="juice")
+                {
+                    total=quantity*j;
+                }
+                else if(deseet=="samosa")
+                {
+                    total=quantity*s;
+                }
+                document.getElementById("f").innerHTML="Hello "+name+". You need to pay: Rs"+total+". We have taken care of your allergy requirements in this item.";
+
+                return false; 
+            }
+            </script>
+        </form>
+    </div>
+    <br><br>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/OFDy9pGTtjE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</body>
+</html>

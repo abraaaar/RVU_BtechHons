@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dropdown Navigation Bar</title>
+</head>
+<body>
+  <br><br><br><br>
+  <label for="name">Name: </label>
+  <input onchange="fun()" type="text" id="name" required>
+
+  <button type="submit">Submit</button>
+
+  <p>Inputs: </p>
+  <p id="d"></p>
+
+  <script>
+    function fun() {
+      let name = document.getElementById("name").value;
+      document.getElementById("d").innerHTML = "Name: " + name;
+    }
+  </script>
+</body>
+</html>

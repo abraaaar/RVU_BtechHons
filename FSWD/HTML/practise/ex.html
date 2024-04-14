@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dropdown Navigation Bar</title>
+</head>
+  <body>
+
+<br><br><br><br>
+        <label for="name">Name: </label>
+        <input onchange="fun()" type="text" id="name" required>
+    
+<br><br><br><br>
+        <label for="email">Email: </label>
+        <input type="email" id="email" required>
+
+<br><br><br><br>
+        <label for="phone">Phone: </label>
+        <input type="tel" id="phone" required>
+    
+<br><br><br><br>
+        <label for="num">Number: </label>
+        <input type="number" id="num" required>
+    
+<br><br><br><br>
+        <label for="date">Date: </label>
+        <input type="date" id="date">
+    
+<br><br><br><br>
+        <label for="textbox">Enter: </label>
+        <input type="text" id="textbox">
+    
+<br><br><br><br>
+        <label for="textarea">Enter: <label>
+        <textarea id="textarea" rows="4" cols="40"></textarea>
+    
+<br><br><br><br>
+
+        <label for="listbox">Listbox: </label>
+        <select>
+            <option value="" disabled selected>Choose</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select>
+
+<br><br><br><br>
+        <label for="checkbox">Checkbox: </label>
+        <label for="option1">Option 1</label>
+        <input type="checkbox" id="option1">
+        <label for="option2">Option 2</label>
+        <input type="checkbox" id="option2">
+        <label for="option3">Option 3</label>
+        <input type="checkbox" id="option3">
+    
+<br><br><br><br>
+        <label for="radio">Radio: </label>
+        <label for="option1">Option 1</label>
+        <input type="radio" id="option1">
+        <label for="option2">Option 2</label>
+        <input type="radio" id="option2">
+        <label for="option3">Option 3</label>
+        <input type="radio" id="option3">
+
+<br><br><br><br>
+
+    <input onchange="fun()">
+    <p>Inputs: </p>
+    <p id="d"></p>
+
+    <script>
+        function fun()
+        {
+            let name=document.getElementbyId("name").value;
+
+            document.getElementbyId("d").innerHTML="Name: "+name;
+        }
+    </script>
+
+</body>
+
+</html>
