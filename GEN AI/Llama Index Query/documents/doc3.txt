@@ -1,0 +1,1 @@
+A Convolutional Neural Network (CNN) is a type of deep learning model used primarily for image recognition and classification.
