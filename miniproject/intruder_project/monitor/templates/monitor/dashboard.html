@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Intruder Alert Dashboard</title>
+</head>
+<body>
+    <h1>🔴 Intruder Alerts</h1>
+    {% for alert in alerts %}
+        <div style="margin-bottom: 20px;">
+            <strong>{{ alert.timestamp }}</strong> - {{ alert.label }}<br>
+            <img src="{{ alert.image.url }}" width="300">
+        </div>
+    {% empty %}
+        <p>No alerts yet.</p>
+    {% endfor %}
+</body>
+</html>
