@@ -30,7 +30,7 @@ while True:
 
     # Break loop on 'q' key press
     if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+        break   
 
 # Release everything
 cap.release()

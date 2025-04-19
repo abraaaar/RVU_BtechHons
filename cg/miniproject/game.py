@@ -41,7 +41,7 @@ def load_texture(file):
     img = img.transpose(Image.FLIP_TOP_BOTTOM)
     img_data = img.convert("RGBA").tobytes()
     width, height = img.size
-
+#road texture
     tex_id = glGenTextures(1)
     glBindTexture(GL_TEXTURE_2D, tex_id)
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0,
@@ -97,7 +97,7 @@ def draw_text_box(center_y, text_lines, box_color=(0.2, 0.2, 0.2), text_color=(1
     for i, line in enumerate(text_lines):
         draw_centered_text(line, box_y + total_height - (i + 1) * line_height, GLUT_BITMAP_HELVETICA_18, text_color)
 
-# --- Game logic ---
+#road lines
 def draw_highway():
     global line_offset
     draw_rect(0, 0, win_width, win_height, (0, 0, 0))
@@ -114,7 +114,7 @@ def draw_highway():
             glVertex2f(x, y + dash_height)
             glEnd()
             y += dash_height + gap
-
+#for the obstacle
 def spawn_obstacle():
     x = random.randint(0, win_width - obs_width)
     y = random.randint(win_height, win_height + 300)
@@ -233,7 +233,7 @@ def special_key_up(key, x, y):
 
 def key_up(key, x, y):
     pass
-
+#for the pictures only 
 def init():
     glClearColor(0.1, 0.1, 0.1, 1.0)
     glMatrixMode(GL_PROJECTION)
